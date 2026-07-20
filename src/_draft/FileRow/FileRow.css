@@ -1,0 +1,71 @@
+/* FileRow — 草稿區。1:1 對應 Figma node 27:1405（item/cell）。
+ * 值全部用現有 token（見 filerow.figma-spec.md）。
+ * 變體：Default（外框 grey-200）/ hover（外框 grey-500）。
+ * 子元件（Checkbox / FileTypeBadge / Button / IconButton）沿用各自樣式，這裡只負責排版。 */
+
+.qlo-file-row {
+  --qlo-file-row-border: var(--primitive-grey-200); /* Default 外框 */
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--padding-regular); /* 16px */
+  min-height: 80px; /* Figma 固定 80；用 min-height 讓放大字體時能撐開（結構性） */
+  /* Figma 標 py-24，但被固定高 80 覆蓋 → 這裡用 min-height 80 + 少量垂直內距，
+     內容置中；放大字體時才有 8px 呼吸空間（憲法 6.3 / 6.5）。 */
+  padding: var(--padding-medium) var(--padding-regular); /* 8px 16px */
+  border: 1px solid var(--qlo-file-row-border);
+  border-radius: var(--radius-medium); /* 12px */
+  background: var(--primitive-grey-0);
+  overflow: hidden;
+}
+
+/* hover：外框轉深灰（Figma Property 1=hover） */
+.qlo-file-row:hover {
+  --qlo-file-row-border: var(--primitive-grey-500);
+}
+
+/* 固定寬度的左側元件不縮 */
+.qlo-file-row__checkbox,
+.qlo-file-row__badge,
+.qlo-file-row__trash {
+  flex-shrink: 0;
+}
+
+/* 中段文字群：吃掉剩餘空間，把動作鈕推到右邊 */
+.qlo-file-row__info {
+  flex: 1 1 auto;
+  min-width: 0; /* 允許子項截斷 */
+  display: flex;
+  align-items: baseline;
+  gap: var(--padding-regular); /* 16px */
+  overflow: hidden;
+}
+
+/* 檔名：單行截斷 …（含無空白長字串，如 report_2026_final_v3.pdf） */
+.qlo-file-row__name {
+  flex: 0 1 auto;
+  min-width: 0;
+  color: var(--semantic-text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 次要說明（檔案大小等）：不搶截斷順序，過長才由容器裁切 */
+.qlo-file-row__detail {
+  flex: 0 0 auto;
+  min-width: 0;
+  color: var(--semantic-text-grey01);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 動作鈕群 */
+.qlo-file-row__actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--padding-regular); /* 16px */
+}

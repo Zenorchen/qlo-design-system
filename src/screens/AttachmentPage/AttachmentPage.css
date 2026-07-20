@@ -1,0 +1,52 @@
+/* AttachmentPage（0720 Demo）版面 — 兩個 Page Demo 共用。
+ * 依需求：頁面大小固定、卡片高度固定到最大值（Figma card h=788）。
+ * 非 token 版面值（gap 48、padding 32、固定寬高、卡片高）為結構性，集中在此、記 FIGMA-SYNC。 */
+
+.attachment-page {
+  --attachment-page-pad-x: 32px; /* 左右內距（結構性，非 token） */
+  --attachment-page-w: 1040px; /* 固定頁寬（結構性） */
+  --attachment-page-h: 90vh; /* 頁面高定調在視窗 90%（依需求） */
+
+  box-sizing: border-box;
+  width: var(--attachment-page-w);
+  height: var(--attachment-page-h);
+  max-height: var(--attachment-page-h);
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-regular); /* Title / 卡片 / footer 間距 16px */
+  padding: var(--padding-regular) var(--attachment-page-pad-x); /* 上下 16、左右 32 */
+  background: var(--primitive-grey-0);
+  overflow: hidden; /* 固定框，不外溢 */
+}
+
+/* 卡片：填滿頁面剩餘高（footer 落到底、16px 間距成立）；清單超出在卡片內捲動 */
+.attachment-page__card {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* 檔案清單：吃掉卡片剩餘空間、超出就自身捲動（卡片高固定，憲法 6.3） */
+.attachment-page__list {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-regular); /* 16px */
+  overflow-y: auto;
+}
+
+/* empty / 只有上傳框時：撐滿卡片剩餘高度 */
+.attachment-page__dropzone-fill {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* 編輯態區塊標題右側動作群：垃圾桶 + Done */
+.attachment-page__header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-medium); /* 8px */
+}

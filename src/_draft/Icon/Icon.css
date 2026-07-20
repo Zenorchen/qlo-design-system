@@ -1,0 +1,17 @@
+/* Icon — 草稿區。單色 SVG icon（24x24），用 currentColor 上色。
+ * 尺寸預設 24px（建置由 PostCSS 轉 rem）；可用 size prop 以 --qlo-icon-size 覆寫。
+ * 顏色軸：dark / grey / inherit。dark、grey 的 token 名待使用者新 token 確認（FIGMA-SYNC）。 */
+
+.qlo-icon {
+  display: inline-block;
+  width: var(--qlo-icon-size, 24px);
+  height: var(--qlo-icon-size, 24px);
+  flex-shrink: 0;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+/* ---- 顏色軸 ---- */
+.qlo-icon--dark { color: var(--semantic-text-dark); }     /* 深色 Semantic/Text/Dark #0b1220 */
+.qlo-icon--grey { color: var(--semantic-text-grey01); }   /* 灰色 Semantic/Text/Grey01 #94a3b8 */
+.qlo-icon--inherit { color: inherit; }                    /* 跟父層走（IconButton 用） */

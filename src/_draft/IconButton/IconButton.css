@@ -1,0 +1,40 @@
+/* IconButton — 草稿區。icon-only 按鈕。
+ * Figma 無對應設計：外觀依使用者口述「參考垃圾桶、hover 亮成橘色」＋工程補齊狀態。
+ * 行為（全部標「推斷／待設計確認」，見 FIGMA-SYNC）：
+ *   default → icon 為 dark / grey；:hover → icon 轉 primary（橘）；
+ *   :focus-visible → 橘色外框；:active → 較深橘；:disabled → 灰、not-allowed。
+ * 底色一律透明（使用者選「純變色」）；tap target ≥ 44px（a11y，憲法 6.5）。 */
+
+.qlo-icon-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;   /* 2.75rem，最小可點擊面積（結構性，非設計語彙） */
+  min-height: 44px;
+  padding: var(--padding-medium); /* 8px */
+  border: none;
+  border-radius: var(--radius-medium); /* 12px，沿用 Button 圓角；待確認 */
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+/* ---- 預設態顏色 ---- */
+.qlo-icon-btn--dark { color: var(--semantic-text-dark); }   /* 深色 Semantic/Text/Dark */
+.qlo-icon-btn--grey { color: var(--semantic-text-grey01); } /* 灰色 Semantic/Text/Grey01 */
+
+/* ---- hover：亮成橘（使用者指定 primary） ---- */
+.qlo-icon-btn:hover:not(:disabled) { color: var(--semantic-brand-primary); }
+
+/* ---- focus（鍵盤）：橘框，沿用 Button/Checkbox ---- */
+.qlo-icon-btn:focus-visible {
+  outline: 2px solid var(--semantic-brand-primary);
+  outline-offset: 2px;
+}
+
+/* ---- pressed / active：較深橘（Figma 未定義，token 推導；待確認） ---- */
+.qlo-icon-btn:active:not(:disabled) { color: var(--primitive-qlo-700); }
+
+/* ---- disabled：中性灰、停用（Figma 未定義；token 推導） ---- */
+.qlo-icon-btn:disabled { color: var(--primitive-grey-300); cursor: not-allowed; }

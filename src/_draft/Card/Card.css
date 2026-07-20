@@ -1,0 +1,21 @@
+/* Card — 草稿區。1:1 對應 Figma node 36:9660。
+ * 非 token 值（radius 10、padding-block 24、border 0.5px、陰影）→ 元件變數 + 記 FIGMA-SYNC。 */
+
+.qlo-card {
+  --qlo-card-radius: 10px; /* 介於 radius small(8)/medium(12)，無對應 token */
+  --qlo-card-padding-block: 24px; /* 間距 token 只有 4/8/16 */
+  /* 柔和陰影：Figma 裸 rgba（197,203,209≈grey-400、148,163,184≈grey01），尚無 shadow token */
+  --qlo-card-shadow: 2px 3px 12px 2px rgba(197, 203, 209, 0.12),
+    0 0 20px 0 rgba(148, 163, 184, 0.06);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-regular); /* 16px */
+  padding: var(--qlo-card-padding-block) var(--padding-regular);
+  background: var(--primitive-grey-0);
+  border: 0.5px solid var(--semantic-text-grey01);
+  border-radius: var(--qlo-card-radius);
+  box-shadow: var(--qlo-card-shadow);
+  overflow: hidden;
+}

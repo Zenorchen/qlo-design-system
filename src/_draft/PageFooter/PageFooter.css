@@ -1,0 +1,25 @@
+/* PageFooter — 草稿區。1:1 對應 Figma node 85:1860。
+ * gap 48 無對應 token → 元件變數（見 FIGMA-SYNC）。 */
+
+.qlo-page-footer {
+  --qlo-page-footer-gap: 48px; /* 非 token */
+
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--qlo-page-footer-gap);
+}
+
+.qlo-page-footer__label {
+  color: var(--semantic-text-grey01);
+  white-space: nowrap;
+}
+
+.qlo-page-footer__actions {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--padding-regular); /* 16px */
+}

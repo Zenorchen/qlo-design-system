@@ -1,0 +1,56 @@
+/* UploadDropzone — 草稿區。1:1 對應 Figma node 99:2141。
+ * 值用現有 token；gap 12px 無對應 token → 元件層級變數 + 記 FIGMA-SYNC。 */
+
+.qlo-dropzone {
+  --qlo-dropzone-gap: 12px; /* 非 token（間距只有 4/8/16），待補，見 FIGMA-SYNC */
+
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--qlo-dropzone-gap);
+  min-height: 80px; /* 結構性下限；empty 態由外層撐高 */
+  padding: var(--padding-regular); /* 16px */
+  border: 1px dashed var(--primitive-grey-500);
+  border-radius: var(--radius-medium); /* 12px */
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* hover / 拖放中：填淺灰藍底（Figma hover = grey-100） */
+.qlo-dropzone:hover:not(:disabled),
+.qlo-dropzone--dragover {
+  background: var(--primitive-grey-100);
+}
+
+.qlo-dropzone:focus-visible {
+  outline: 2px solid var(--semantic-brand-primary);
+  outline-offset: 2px;
+}
+
+.qlo-dropzone:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 上傳 icon 用品牌橘（Figma #FD5215）。Icon color="inherit" → 吃這裡的 color */
+.qlo-dropzone__icon {
+  color: var(--semantic-brand-primary);
+}
+
+.qlo-dropzone__title {
+  color: var(--semantic-text-dark);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qlo-dropzone__subtitle {
+  color: var(--semantic-text-grey01);
+  overflow-wrap: anywhere; /* 長提示字不撐破 */
+}

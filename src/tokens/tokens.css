@@ -1,0 +1,71 @@
+/* tokens.css — Qlo Design System
+   Generated from Figma export 2026-07-20. Names mirror Figma variable names 1:1.
+   Do not hand-edit values; re-export from Figma and regenerate. */
+
+:root {
+  /* ---- Color · Primitives ---- */
+  --primitive-qlo-600-primary: #fd5215;
+  --primitive-qlo-700: #d63706;
+  --primitive-qlo-800: #b02300;
+  --primitive-qlo-900: #8a1700;
+  --primitive-qlo-100: #fff1e6;
+  --primitive-qlo-200: #ffd4b8;
+  --primitive-qlo-300: #ffb88f;
+  --primitive-qlo-400: #ff9966;
+  --primitive-qlo-500: #ff773d;
+  --primitive-qlo-1000: #630d00;
+  --primitive-dark-blue-100: #5b5e61;
+  --primitive-dark-blue-200: #4f5154;
+  --primitive-dark-blue-300: #3b4047;
+  --primitive-dark-blue-400: #272f3b;
+  --primitive-dark-blue-500: #171f2e;
+  --primitive-dark-blue-600-primary: #0b1220;
+  --primitive-dark-blue-700: #000000;
+  --primitive-dark-blue-50: #94a3b8;
+  --primitive-grey-0: #ffffff;
+  --primitive-grey-100: #e9f1f7;
+  --primitive-grey-200: #dde4eb;
+  --primitive-grey-300: #d1d7de;
+  --primitive-grey-400: #c5cbd1;
+  --primitive-grey-500: #b9bec4;
+  --primitive-grey-600-primary: #94a3b8;
+  --primitive-grey-700: #6d7b91;
+  --primitive-grey-800: #4b566b;
+  --primitive-grey-900: #2d3445;
+  --primitive-grey-1000: #14171f;
+
+  /* ---- Color · Semantic (alias chains preserved；Figma Color export 更新 2026-07-20) ---- */
+  /* Brand（此版新增 dark / primary-grey 兩個中介語意色） */
+  --semantic-brand-dark: var(--primitive-dark-blue-600-primary);
+  --semantic-brand-primary-grey: var(--primitive-grey-600-primary);
+  --semantic-brand-primary: var(--primitive-qlo-600-primary);
+  --semantic-brand-white: var(--primitive-grey-0);
+  /* Text */
+  --semantic-text-dark: var(--semantic-brand-dark);            /* 原 Semantic/Text/base01 改名為 Text/Dark */
+  --semantic-text-grey01: var(--semantic-brand-primary-grey);
+  --semantic-text-qlo-primary: var(--semantic-brand-primary);
+  --semantic-text-white: var(--semantic-brand-white);
+
+  /* ---- Radius ---- */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-big: 16px;
+
+  /* ---- Padding ---- */
+  --padding-extra-small: 4px;
+  --padding-medium: 8px;
+  --padding-regular: 16px;
+}
+
+/* ---- Typography (Poppins 400/600, Space Mono 700) ---- */
+.text-title-semibold-28 { font-family:'Poppins',sans-serif; font-weight:600; font-size:28px; line-height:1.13; letter-spacing:-0.030em; }
+.text-title-semibold-24 { font-family:'Poppins',sans-serif; font-weight:600; font-size:24px; line-height:1.13; letter-spacing:-0.030em; }
+.text-title-semibold-20 { font-family:'Poppins',sans-serif; font-weight:600; font-size:20px; line-height:1; letter-spacing:-0.010em; }
+.text-subtitle-regular-17 { font-family:'Poppins',sans-serif; font-weight:400; font-size:17px; line-height:1.55; letter-spacing:0.010em; }
+.text-body-regular-16 { font-family:'Poppins',sans-serif; font-weight:400; font-size:16px; line-height:1.55; letter-spacing:0.010em; }
+.text-body-regular-14 { font-family:'Poppins',sans-serif; font-weight:400; font-size:14px; line-height:1.55; letter-spacing:0.010em; }
+.text-body-bold-16 { font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; line-height:1.55; letter-spacing:0.010em; }
+.text-button-text-semibold-18 { font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; line-height:1; letter-spacing:-0.010em; }
+.text-button-text-semibold-16 { font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; line-height:1; letter-spacing:-0.010em; }
+.text-button-text-semibold-12 { font-family:'Poppins',sans-serif; font-weight:600; font-size:12px; line-height:1; letter-spacing:-0.010em; }
+.text-deco-eyebrow-upercase { font-family:'Space Mono',sans-serif; font-weight:700; font-size:12.5px; line-height:1.55; letter-spacing:0.5px; text-transform:uppercase; }

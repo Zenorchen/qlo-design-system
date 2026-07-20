@@ -1,0 +1,78 @@
+/* Button — 草稿區。1:1 對應 Figma node 36:5816。
+ * 值全部來自 Figma（見 button.figma-spec.md）；顏色/圓角/字級用 tokens.css 的 token。
+ * 軸：color(red/black/grey) × styleType(filled/stroke/clean) × size(big/medium/small)
+ * 狀態：Default / :hover / :disabled。 */
+
+.qlo-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.2px solid transparent; /* 保留邊框空間，stroke 才不會位移 */
+  border-radius: var(--radius-medium); /* 12px */
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.qlo-btn:focus-visible { outline: 2px solid var(--semantic-brand-primary); outline-offset: 2px; }
+.qlo-btn:disabled { cursor: not-allowed; }
+.qlo-btn__icon { display: inline-flex; align-items: center; flex-shrink: 0; }
+
+/* ---- Size ---- */
+.qlo-btn--big { min-height: 52px; padding: 16px 24px; gap: var(--padding-medium); }        /* gap 8 */
+.qlo-btn--medium { min-height: 44px; padding: 14px 16px; gap: var(--padding-medium); }      /* gap 8 */
+.qlo-btn--small { min-height: 42px; min-width: 68px; padding: 12px 14px; gap: var(--padding-extra-small); } /* gap 4 */
+
+/* =====================================================================
+ * filled
+ * ===================================================================== */
+.qlo-btn--filled { color: var(--semantic-text-white); }
+.qlo-btn--red.qlo-btn--filled { background: var(--semantic-brand-primary); }
+.qlo-btn--red.qlo-btn--filled:hover:not(:disabled) { background: var(--primitive-qlo-400); }
+.qlo-btn--black.qlo-btn--filled { background: var(--semantic-text-dark); }
+.qlo-btn--black.qlo-btn--filled:hover:not(:disabled) { background: var(--primitive-grey-800); }
+.qlo-btn--grey.qlo-btn--filled { background: var(--primitive-grey-700); }
+.qlo-btn--grey.qlo-btn--filled:hover:not(:disabled) { background: var(--primitive-grey-800); }
+
+/* =====================================================================
+ * stroke（邊框 1.2px、無底）
+ * ===================================================================== */
+.qlo-btn--stroke { background: transparent; }
+.qlo-btn--red.qlo-btn--stroke { border-color: var(--semantic-brand-primary); color: var(--semantic-text-qlo-primary); }
+.qlo-btn--red.qlo-btn--stroke:hover:not(:disabled) { background: color-mix(in srgb, var(--primitive-qlo-200) 50%, transparent); }
+.qlo-btn--black.qlo-btn--stroke { border-color: var(--primitive-grey-500); color: var(--semantic-text-dark); }
+.qlo-btn--black.qlo-btn--stroke:hover:not(:disabled) { background: var(--primitive-grey-200); }
+.qlo-btn--grey.qlo-btn--stroke { border-color: var(--primitive-grey-500); color: var(--primitive-grey-700); }
+.qlo-btn--grey.qlo-btn--stroke:hover:not(:disabled) { background: var(--primitive-grey-200); }
+
+/* =====================================================================
+ * clean（無底無框）
+ * ===================================================================== */
+.qlo-btn--clean { background: transparent; }
+.qlo-btn--red.qlo-btn--clean { color: var(--semantic-text-qlo-primary); }
+.qlo-btn--red.qlo-btn--clean:hover:not(:disabled) { background: color-mix(in srgb, var(--primitive-qlo-200) 50%, transparent); }
+.qlo-btn--black.qlo-btn--clean { color: var(--semantic-text-dark); }
+.qlo-btn--black.qlo-btn--clean:hover:not(:disabled) { background: var(--primitive-grey-500); }
+.qlo-btn--grey.qlo-btn--clean { color: var(--primitive-grey-700); }
+.qlo-btn--grey.qlo-btn--clean:hover:not(:disabled) { background: var(--primitive-grey-500); }
+
+/* =====================================================================
+ * pressed / :active（Figma 未定義；用 token 推導較深值，待設計端確認 → FIGMA-SYNC）
+ * ===================================================================== */
+.qlo-btn--red.qlo-btn--filled:active:not(:disabled) { background: var(--primitive-qlo-700); }
+.qlo-btn--black.qlo-btn--filled:active:not(:disabled) { background: var(--primitive-dark-blue-700); }
+.qlo-btn--grey.qlo-btn--filled:active:not(:disabled) { background: var(--primitive-grey-900); }
+
+.qlo-btn--red.qlo-btn--stroke:active:not(:disabled),
+.qlo-btn--red.qlo-btn--clean:active:not(:disabled) { background: color-mix(in srgb, var(--primitive-qlo-200) 80%, transparent); }
+.qlo-btn--black.qlo-btn--stroke:active:not(:disabled),
+.qlo-btn--grey.qlo-btn--stroke:active:not(:disabled) { background: var(--primitive-grey-300); }
+.qlo-btn--black.qlo-btn--clean:active:not(:disabled),
+.qlo-btn--grey.qlo-btn--clean:active:not(:disabled) { background: var(--primitive-grey-600-primary); }
+
+/* =====================================================================
+ * disable（三色相同，依 style 而異；放最後以覆蓋各 color 基底樣式）
+ * ===================================================================== */
+.qlo-btn--filled:disabled { background: var(--primitive-grey-300); color: var(--primitive-grey-200); border-color: transparent; }
+.qlo-btn--stroke:disabled { background: transparent; border-color: var(--primitive-grey-200); color: var(--primitive-grey-200); }
+.qlo-btn--clean:disabled { background: transparent; color: var(--primitive-grey-500); }

@@ -1,0 +1,53 @@
+/* Title — 草稿區。1:1 對應 Figma node 27:2427。
+ * gap 16 用 token；標題/副標間距 6px(small)/10px(large) 無 token → 元件變數（見 FIGMA-SYNC）。 */
+
+.qlo-title {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  gap: var(--padding-extra-small); /* 4px：icon↔字間距（text 為 flex:1，右側 action 仍被推到最右） */
+  align-items: flex-start;
+}
+
+/* small：左內縮 16（Figma pl-16）；large：上下內距 16（Figma py-16） */
+.qlo-title--small {
+  padding-left: var(--padding-regular);
+}
+.qlo-title--large {
+  padding-top: var(--padding-regular);
+  padding-bottom: var(--padding-regular);
+}
+
+.qlo-title__icon {
+  flex-shrink: 0;
+  color: var(--semantic-text-dark);
+}
+
+.qlo-title__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.qlo-title--small .qlo-title__text {
+  gap: 6px; /* 非 token，見 FIGMA-SYNC */
+}
+.qlo-title--large .qlo-title__text {
+  gap: 10px; /* 非 token，見 FIGMA-SYNC */
+}
+
+.qlo-title__heading {
+  color: var(--semantic-text-dark);
+  overflow-wrap: anywhere; /* 超長標題換行不撐破 */
+}
+
+.qlo-title__detail {
+  color: var(--semantic-text-grey01);
+  overflow-wrap: anywhere;
+}
+
+.qlo-title__action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}

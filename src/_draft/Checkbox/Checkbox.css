@@ -1,0 +1,70 @@
+/* Checkbox — 草稿區。1:1 對應 Figma node 27:1545。
+ * 值全部用 token；grey filled 的 #f2f7fe 是 Figma 裸 hex（無 token），
+ * 暫用元件層級變數 --qlo-checkbox-grey-fill，已記 FIGMA-SYNC。
+ * 軸：color(black/grey/red) × styleType(stroke/filled)；state = checked(bool) + :hover。 */
+
+.qlo-checkbox {
+  --qlo-checkbox-grey-fill: #f2f7fe; /* 待 token 化（FIGMA-SYNC） */
+  display: inline-flex;
+  cursor: pointer;
+}
+
+/* 視覺隱藏但保留鍵盤可聚焦的原生 input */
+.qlo-checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.qlo-checkbox__box {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small); /* 8px */
+  transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.qlo-checkbox__check {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* focus（鍵盤）— Figma 未定義，沿用 Button 的橘框 */
+.qlo-checkbox__input:focus-visible + .qlo-checkbox__box {
+  outline: 2px solid var(--semantic-brand-primary);
+  outline-offset: 2px;
+}
+
+/* ---- color = black ---- */
+.qlo-checkbox--black .qlo-checkbox__box { border-color: var(--semantic-text-dark); }
+.qlo-checkbox--black .qlo-checkbox__check { color: var(--semantic-text-dark); }
+.qlo-checkbox--black:hover .qlo-checkbox__box { box-shadow: 0 0 4px 0 var(--primitive-grey-500); }
+.qlo-checkbox--black.qlo-checkbox--filled .qlo-checkbox__box { background: var(--primitive-grey-100); }
+
+/* ---- color = grey ---- */
+.qlo-checkbox--grey .qlo-checkbox__box { border-color: var(--semantic-text-grey01); }
+.qlo-checkbox--grey .qlo-checkbox__check { color: var(--semantic-text-grey01); }
+.qlo-checkbox--grey:hover .qlo-checkbox__box { box-shadow: 0 0 4px 0 var(--primitive-dark-blue-50); }
+.qlo-checkbox--grey.qlo-checkbox--filled .qlo-checkbox__box { background: var(--qlo-checkbox-grey-fill); }
+
+/* ---- color = red ---- */
+.qlo-checkbox--red .qlo-checkbox__box { border-color: var(--semantic-brand-primary); }
+.qlo-checkbox--red .qlo-checkbox__check { color: var(--semantic-brand-primary); }
+.qlo-checkbox--red:hover .qlo-checkbox__box { box-shadow: 0 0 4px 0 var(--semantic-brand-primary); }
+.qlo-checkbox--red.qlo-checkbox--filled .qlo-checkbox__box { background: var(--primitive-qlo-100); }
+
+/* ---- disabled（Figma 未定義；token 推導的中性停用樣式，色不分 color，見 FIGMA-SYNC）---- */
+/* 放最後以覆蓋各 color 樣式 */
+.qlo-checkbox--disabled { cursor: not-allowed; }
+.qlo-checkbox--disabled .qlo-checkbox__box { border-color: var(--primitive-grey-300); background: transparent; }
+.qlo-checkbox--disabled.qlo-checkbox--filled .qlo-checkbox__box { background: var(--primitive-grey-100); }
+.qlo-checkbox--disabled .qlo-checkbox__check { color: var(--primitive-grey-300); }
+.qlo-checkbox--disabled:hover .qlo-checkbox__box { box-shadow: none; }

@@ -1,0 +1,14 @@
+/* FileTypeBadge — 草稿區。1:1 對應 Figma node 27:638（usage/attachment）。
+ * 基礎樣式來自 27:635（item/square）。值全部用現有 token，無新增。
+ * 字體用 tokens.css 的 .text-deco-eyebrow-upercase（Space Mono Bold 12.5 大寫）。 */
+
+.qlo-file-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-extra-small); /* 4px */
+  background: var(--primitive-grey-200);
+  color: var(--semantic-text-grey01);
+  border-radius: var(--radius-small); /* 8px */
+  white-space: nowrap;
+}
