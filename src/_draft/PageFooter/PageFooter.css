@@ -24,3 +24,8 @@
   justify-content: flex-end;
   gap: var(--padding-regular); /* 16px */
 }
+
+/* Back / Next 固定寬 88（依使用者調整） */
+.qlo-page-footer__actions .qlo-btn {
+  min-width: 88px;
+}

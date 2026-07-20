@@ -73,6 +73,7 @@ const PADDINGS = [
 const TYPO: { cls: string; label: string }[] = [
   { cls: "text-title-semibold-24", label: "Title / SemiBold 24" },
   { cls: "text-title-semibold-20", label: "Title / SemiBold 20" },
+  { cls: "text-title-semibold-18", label: "Title / SemiBold 18" },
   { cls: "text-title-semibold-16", label: "Title / SemiBold 16" },
   { cls: "text-subtitle-regular-16", label: "Subtitle / Regular 16" },
   { cls: "text-body-regular-16", label: "Body / Regular 16" },

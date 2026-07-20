@@ -105,7 +105,7 @@ export function AttachmentFlow() {
         <Button
           color="black"
           styleType="link"
-          size="small"
+          size="medium"
           leadingIcon={<Icon name="trash-can" size={14} color="inherit" aria-hidden />}
           onClick={deleteChecked}
           disabled={checked.size === 0}
@@ -115,7 +115,7 @@ export function AttachmentFlow() {
         <Button
           color="black"
           styleType="link"
-          size="small"
+          size="medium"
           leadingIcon={<Icon name="plus" size={14} color="inherit" aria-hidden />}
           onClick={() => addInputRef.current?.click()}
         >
@@ -125,7 +125,7 @@ export function AttachmentFlow() {
       <Button
         color="black"
         styleType="filled"
-        size="small"
+        size="medium"
         leadingIcon={<Icon name="check" size={14} color="inherit" aria-hidden />}
         onClick={() => switchMode("list")}
       >
@@ -137,7 +137,7 @@ export function AttachmentFlow() {
     <Button
       color="black"
       styleType="filled"
-      size="small"
+      size="medium"
       leadingIcon={<Icon name="pen" size={14} color="inherit" aria-hidden />}
       onClick={() => switchMode("edit")}
     >
@@ -154,7 +154,7 @@ export function AttachmentFlow() {
         action={
           <Button
             color="black"
-            styleType="clean"
+            styleType="link"
             size="medium"
             leadingIcon={<Icon name="circle-info" size={16} color="inherit" aria-hidden />}
           >

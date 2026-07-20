@@ -42,9 +42,9 @@ export function Title({
     .filter(Boolean)
     .join(" ");
 
-  // large：標題 20；small：標題 16。副標兩尺寸皆 16。皆引用現有字級 token。
+  // large：標題 18；small：標題 16。副標兩尺寸皆 16。皆引用現有字級 token。
   const titleClass =
-    size === "large" ? "text-title-semibold-20" : "text-title-semibold-16";
+    size === "large" ? "text-title-semibold-18" : "text-title-semibold-16";
   const detailClass = "text-subtitle-regular-16";
 
   return (
@@ -52,7 +52,7 @@ export function Title({
       {showIcon && (
         <Icon
           name={icon}
-          size={size === "large" ? 28 : 20}
+          size={size === "large" ? 24 : 20}
           color="dark"
           className="qlo-title__icon"
           aria-hidden

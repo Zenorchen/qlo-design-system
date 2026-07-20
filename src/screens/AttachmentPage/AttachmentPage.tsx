@@ -54,7 +54,7 @@ export function AttachmentPage({ state = "default" }: AttachmentPageProps) {
     <Button
       color="black"
       styleType="filled"
-      size="small"
+      size="medium"
       leadingIcon={<Icon name="check" size={14} color="inherit" aria-hidden />}
     >
       Done
@@ -64,7 +64,7 @@ export function AttachmentPage({ state = "default" }: AttachmentPageProps) {
     <Button
       color="black"
       styleType="filled"
-      size="small"
+      size="medium"
       leadingIcon={<Icon name="pen" size={14} color="inherit" aria-hidden />}
     >
       Edit
@@ -80,7 +80,7 @@ export function AttachmentPage({ state = "default" }: AttachmentPageProps) {
         action={
           <Button
             color="black"
-            styleType="clean"
+            styleType="link"
             size="medium"
             leadingIcon={<Icon name="circle-info" size={16} color="inherit" aria-hidden />}
           >
