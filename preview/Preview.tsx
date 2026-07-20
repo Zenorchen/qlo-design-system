@@ -131,8 +131,14 @@ function Canvas({ mod }: { mod: PreviewModule }) {
 
 type Selection = "tokens" | number;
 
+// 預設打開就進互動 demo（一開始是空的上傳畫面）；找不到才退回 tokens
+const DEFAULT_INDEX = (() => {
+  const i = registry.findIndex((m) => m.meta.title === "0720 Demo（互動）");
+  return i >= 0 ? i : ("tokens" as const);
+})();
+
 export default function Preview() {
-  const [selected, setSelected] = useState<Selection>("tokens");
+  const [selected, setSelected] = useState<Selection>(DEFAULT_INDEX);
   const mod = typeof selected === "number" ? registry[selected] : undefined;
 
   // 依 registry 出現順序收集分組名稱（省略 group 者歸 "Components"）
