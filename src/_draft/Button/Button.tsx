@@ -3,7 +3,7 @@ import "./Button.css";
 
 /** 對應 Figma 的三個軸（node 36:5816） */
 export type ButtonColor = "red" | "black" | "grey";
-export type ButtonStyleType = "filled" | "stroke" | "clean";
+export type ButtonStyleType = "filled" | "stroke" | "clean" | "link";
 export type ButtonSize = "big" | "medium" | "small";
 
 export interface ButtonProps

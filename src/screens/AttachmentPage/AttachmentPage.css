@@ -44,9 +44,24 @@
   min-height: 0;
 }
 
-/* 編輯態區塊標題右側動作群：垃圾桶 + Done */
+/* 有清單時的上傳框：高度固定在自然內容高，不隨項目數被壓縮（憲法 6.3 卡片高固定，
+ * 但上傳框本身不縮，超出的量交給下方清單自身捲動） */
+.attachment-page__dropzone {
+  flex: 0 0 auto;
+}
+
+/* 編輯態區塊標題右側動作群：Delete/File 組 + Done */
 .attachment-page__header-actions {
   display: flex;
   align-items: center;
   gap: var(--padding-medium); /* 8px */
+}
+
+/* Delete / File 一組：inline-grid + grid-auto-columns:1fr → 兩顆等寬（自動對齊較寬者），
+ * 間距 2px（非 token，屬結構性微調）。grid item 預設 stretch，按鈕自動填滿等寬格。 */
+.attachment-page__edit-actions {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 2px;
 }

@@ -57,6 +57,25 @@
 .qlo-btn--grey.qlo-btn--clean:hover:not(:disabled) { background: var(--primitive-grey-500); }
 
 /* =====================================================================
+ * link（文字連結風：無底無框、貼合內容、icon 與字緊靠；hover 整體轉品牌橘）
+ *   - 拿掉 size 的 min-width / 左右 padding，讓按鈕寬度貼合 icon+文字，不再被拉開
+ *   - Icon 用 currentColor → hover 時字和 icon 一起變橘
+ * ===================================================================== */
+.qlo-btn--link {
+  background: transparent;
+  min-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  gap: var(--padding-extra-small); /* 4px：icon 與字緊貼 */
+}
+.qlo-btn--red.qlo-btn--link { color: var(--semantic-text-qlo-primary); }
+.qlo-btn--black.qlo-btn--link { color: var(--semantic-text-dark); }
+.qlo-btn--grey.qlo-btn--link { color: var(--primitive-grey-700); }
+.qlo-btn--link:hover:not(:disabled) { color: var(--semantic-brand-primary); }
+.qlo-btn--link:active:not(:disabled) { color: var(--primitive-qlo-700); }
+.qlo-btn--link:disabled { background: transparent; color: var(--primitive-grey-500); }
+
+/* =====================================================================
  * pressed / :active（Figma 未定義；用 token 推導較深值，待設計端確認 → FIGMA-SYNC）
  * ===================================================================== */
 .qlo-btn--red.qlo-btn--filled:active:not(:disabled) { background: var(--primitive-qlo-700); }

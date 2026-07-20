@@ -14,7 +14,7 @@
   gap: var(--padding-regular); /* 16px */
   padding: var(--qlo-card-padding-block) var(--padding-regular);
   background: var(--primitive-grey-0);
-  border: 0.5px solid var(--semantic-text-grey01);
+  border: 0.5px solid var(--primitive-grey-200);
   border-radius: var(--qlo-card-radius);
   box-shadow: var(--qlo-card-shadow);
   overflow: hidden;

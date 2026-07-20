@@ -6,7 +6,6 @@ import { FileRow } from "../../_draft/FileRow/FileRow";
 import type { FileType } from "../../_draft/FileTypeBadge/FileTypeBadge";
 import { PageFooter } from "../../_draft/PageFooter/PageFooter";
 import { Button } from "../../_draft/Button/Button";
-import { IconButton } from "../../_draft/IconButton/IconButton";
 import { Icon } from "../../_draft/Icon/Icon";
 // 沿用 0720 Demo 的版面 class（.attachment-page / __list / __dropzone-fill）
 import "../AttachmentPage/AttachmentPage.css";
@@ -44,6 +43,8 @@ const SEED: Omit<FileItem, "id">[] = [];
 export function AttachmentFlow() {
   const [mode, setMode] = useState<"list" | "edit">("list");
   const idRef = useRef(SEED.length);
+  // 編輯模式「+ File」按鈕用：點了開檔案選擇器，行為對齊 dropzone 的 click to upload
+  const addInputRef = useRef<HTMLInputElement>(null);
   const [files, setFiles] = useState<FileItem[]>(() =>
     SEED.map((f, i) => ({ ...f, id: i })),
   );
@@ -99,13 +100,28 @@ export function AttachmentFlow() {
 
   const sectionAction = isEdit ? (
     <div className="attachment-page__header-actions">
-      <IconButton
-        name="trash-can"
-        color="grey"
-        label="刪除已勾選項目"
-        onClick={deleteChecked}
-        disabled={checked.size === 0}
-      />
+      {/* Delete / File 一組：等寬（對齊較寬的 Delete）、彼此間距 2px */}
+      <div className="attachment-page__edit-actions">
+        <Button
+          color="black"
+          styleType="link"
+          size="small"
+          leadingIcon={<Icon name="trash-can" size={14} color="inherit" aria-hidden />}
+          onClick={deleteChecked}
+          disabled={checked.size === 0}
+        >
+          Delete
+        </Button>
+        <Button
+          color="black"
+          styleType="link"
+          size="small"
+          leadingIcon={<Icon name="plus" size={14} color="inherit" aria-hidden />}
+          onClick={() => addInputRef.current?.click()}
+        >
+          File
+        </Button>
+      </div>
       <Button
         color="black"
         styleType="filled"
@@ -154,7 +170,7 @@ export function AttachmentFlow() {
         {!isEdit && (
           <UploadDropzone
             onFiles={handleFiles}
-            className={isEmpty ? "attachment-page__dropzone-fill" : undefined}
+            className={isEmpty ? "attachment-page__dropzone-fill" : "attachment-page__dropzone"}
           />
         )}
 
@@ -180,6 +196,19 @@ export function AttachmentFlow() {
           </div>
         )}
       </Card>
+
+      {/* 「+ File」按鈕觸發的隱藏 input，accept/multiple 對齊 UploadDropzone */}
+      <input
+        ref={addInputRef}
+        type="file"
+        accept=".eml,.pdf"
+        multiple
+        hidden
+        onChange={(e) => {
+          if (e.target.files?.length) handleFiles(e.target.files);
+          e.target.value = ""; // 允許重選同一檔
+        }}
+      />
 
       <PageFooter label="2026 Q2" />
     </div>

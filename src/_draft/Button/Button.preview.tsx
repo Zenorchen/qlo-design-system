@@ -9,7 +9,7 @@ export const ButtonPreview: PreviewModule<ButtonProps> = {
     component: Button,
     controls: {
       color: { type: "select", label: "color", options: ["red", "black", "grey"] },
-      styleType: { type: "select", label: "styleType", options: ["filled", "stroke", "clean"] },
+      styleType: { type: "select", label: "styleType", options: ["filled", "stroke", "clean", "link"] },
       size: { type: "select", label: "size", options: ["big", "medium", "small"] },
       children: { type: "text", label: "文字" },
       disabled: { type: "boolean", label: "disabled" },
@@ -27,7 +27,7 @@ export const ButtonPreview: PreviewModule<ButtonProps> = {
 
 /* ============ 模組二：完整矩陣（color × style × state；hover 直接移上去看） ============ */
 const COLORS: ButtonColor[] = ["red", "black", "grey"];
-const STYLES: ButtonStyleType[] = ["filled", "stroke", "clean"];
+const STYLES: ButtonStyleType[] = ["filled", "stroke", "clean", "link"];
 const SIZE_LABEL: Record<ButtonSize, string> = { big: "big", medium: "medium", small: "small" };
 
 function Cell({ children }: { children: React.ReactNode }) {

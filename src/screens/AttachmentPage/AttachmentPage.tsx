@@ -98,7 +98,7 @@ export function AttachmentPage({ state = "default" }: AttachmentPageProps) {
 
         {state === "default" && (
           <>
-            <UploadDropzone />
+            <UploadDropzone className="attachment-page__dropzone" />
             <div className="attachment-page__list">
               {FILES.map((f, i) => (
                 <FileRow key={i} fileType={f.type} name={f.name} detail={f.size} />

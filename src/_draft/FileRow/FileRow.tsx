@@ -1,4 +1,4 @@
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, MouseEvent } from "react";
 import { FileTypeBadge, type FileType } from "../FileTypeBadge/FileTypeBadge";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { Button } from "../Button/Button";
@@ -51,10 +51,25 @@ export function FileRow({
   onDetail,
   className,
 }: FileRowProps) {
-  const cls = ["qlo-file-row", className].filter(Boolean).join(" ");
+  const cls = ["qlo-file-row", selectable && "qlo-file-row--selectable", className]
+    .filter(Boolean)
+    .join(" ");
+
+  // 編輯模式：整條 row 可點切換勾選，但點在勾選框／View／Detail／垃圾桶上時
+  // 交給各自的 handler，不重複觸發。
+  function handleRowClick(e: MouseEvent<HTMLDivElement>) {
+    if (!selectable) return;
+    if (
+      (e.target as HTMLElement).closest(
+        ".qlo-file-row__checkbox, .qlo-file-row__actions, .qlo-file-row__trash",
+      )
+    )
+      return;
+    onCheckedChange?.(!checked);
+  }
 
   return (
-    <div className={cls}>
+    <div className={cls} onClick={handleRowClick}>
       {selectable && (
         <Checkbox
           className="qlo-file-row__checkbox"

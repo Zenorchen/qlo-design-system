@@ -25,6 +25,11 @@
   --qlo-file-row-border: var(--primitive-grey-500);
 }
 
+/* 編輯模式：整條可點切換勾選 → 游標提示可點 */
+.qlo-file-row--selectable {
+  cursor: pointer;
+}
+
 /* 固定寬度的左側元件不縮 */
 .qlo-file-row__checkbox,
 .qlo-file-row__badge,
