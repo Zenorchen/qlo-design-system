@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   gap: var(--qlo-page-footer-gap);
+  padding-top: var(--padding-extra-small); /* 4px：跟上方卡片再多推 4（依使用者調整） */
 }
 
 .qlo-page-footer__label {

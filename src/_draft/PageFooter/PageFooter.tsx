@@ -28,7 +28,7 @@ export function PageFooter({
   return (
     <div className={cls}>
       {label && (
-        <span className="qlo-page-footer__label text-subtitle-regular-17">{label}</span>
+        <span className="qlo-page-footer__label text-subtitle-regular-16">{label}</span>
       )}
       <div className="qlo-page-footer__actions">
         <Button color="grey" styleType="stroke" size="big" onClick={onBack}>

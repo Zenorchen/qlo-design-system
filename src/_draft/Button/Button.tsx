@@ -22,9 +22,9 @@ export interface ButtonProps
 
 /** size → 字級 token（tokens.css 的 utility class） */
 const TYPO_BY_SIZE: Record<ButtonSize, string> = {
-  big: "text-button-text-semibold-18",
-  medium: "text-button-text-semibold-16",
-  small: "text-button-text-semibold-12",
+  big: "text-button-text-medium-16",
+  medium: "text-button-text-medium-14",
+  small: "text-button-text-medium-12",
 };
 
 export function Button({

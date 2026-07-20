@@ -38,13 +38,14 @@ export function Title({
   action,
   className,
 }: TitleProps) {
-  const cls = ["qlo-title", `qlo-title--${size}`, className]
+  const cls = ["qlo-title", `qlo-title--${size}`, !showIcon && "qlo-title--no-icon", className]
     .filter(Boolean)
     .join(" ");
 
-  // large 依使用者調整為 24（原 Figma 28 太大）；small 維持 20。皆引用現有字級 token。
+  // large：標題 20；small：標題 16。副標兩尺寸皆 16。皆引用現有字級 token。
   const titleClass =
-    size === "large" ? "text-title-semibold-24" : "text-title-semibold-20";
+    size === "large" ? "text-title-semibold-20" : "text-title-semibold-16";
+  const detailClass = "text-subtitle-regular-16";
 
   return (
     <div className={cls}>
@@ -62,7 +63,7 @@ export function Title({
           {title}
         </span>
         {showDetail && detail && (
-          <span className="qlo-title__detail text-subtitle-regular-17">{detail}</span>
+          <span className={`qlo-title__detail ${detailClass}`}>{detail}</span>
         )}
       </div>
       {action && <div className="qlo-title__action">{action}</div>}

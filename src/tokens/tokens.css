@@ -58,14 +58,14 @@
 }
 
 /* ---- Typography (Poppins 400/600, Space Mono 700) ---- */
-.text-title-semibold-28 { font-family:'Poppins',sans-serif; font-weight:600; font-size:28px; line-height:1.13; letter-spacing:-0.030em; }
 .text-title-semibold-24 { font-family:'Poppins',sans-serif; font-weight:600; font-size:24px; line-height:1.13; letter-spacing:-0.030em; }
 .text-title-semibold-20 { font-family:'Poppins',sans-serif; font-weight:600; font-size:20px; line-height:1; letter-spacing:-0.010em; }
-.text-subtitle-regular-17 { font-family:'Poppins',sans-serif; font-weight:400; font-size:17px; line-height:1.55; letter-spacing:0.010em; }
+.text-title-semibold-16 { font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; line-height:1; letter-spacing:-0.010em; }
+.text-subtitle-regular-16 { font-family:'Poppins',sans-serif; font-weight:400; font-size:16px; line-height:1.55; letter-spacing:0.010em; }
 .text-body-regular-16 { font-family:'Poppins',sans-serif; font-weight:400; font-size:16px; line-height:1.55; letter-spacing:0.010em; }
 .text-body-regular-14 { font-family:'Poppins',sans-serif; font-weight:400; font-size:14px; line-height:1.55; letter-spacing:0.010em; }
 .text-body-bold-16 { font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; line-height:1.55; letter-spacing:0.010em; }
-.text-button-text-semibold-18 { font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; line-height:1; letter-spacing:-0.010em; }
-.text-button-text-semibold-16 { font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; line-height:1; letter-spacing:-0.010em; }
-.text-button-text-semibold-12 { font-family:'Poppins',sans-serif; font-weight:600; font-size:12px; line-height:1; letter-spacing:-0.010em; }
+.text-button-text-medium-16 { font-family:'Poppins',sans-serif; font-weight:500; font-size:16px; line-height:1; letter-spacing:-0.010em; }
+.text-button-text-medium-14 { font-family:'Poppins',sans-serif; font-weight:500; font-size:14px; line-height:1; letter-spacing:-0.010em; }
+.text-button-text-medium-12 { font-family:'Poppins',sans-serif; font-weight:500; font-size:12px; line-height:1; letter-spacing:-0.010em; }
 .text-deco-eyebrow-upercase { font-family:'Space Mono',sans-serif; font-weight:700; font-size:12.5px; line-height:1.55; letter-spacing:0.5px; text-transform:uppercase; }

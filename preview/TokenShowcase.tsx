@@ -71,16 +71,16 @@ const PADDINGS = [
 ];
 
 const TYPO: { cls: string; label: string }[] = [
-  { cls: "text-title-semibold-28", label: "Title / SemiBold 28" },
   { cls: "text-title-semibold-24", label: "Title / SemiBold 24" },
   { cls: "text-title-semibold-20", label: "Title / SemiBold 20" },
-  { cls: "text-subtitle-regular-17", label: "Subtitle / Regular 17" },
+  { cls: "text-title-semibold-16", label: "Title / SemiBold 16" },
+  { cls: "text-subtitle-regular-16", label: "Subtitle / Regular 16" },
   { cls: "text-body-regular-16", label: "Body / Regular 16" },
   { cls: "text-body-regular-14", label: "Body / Regular 14" },
   { cls: "text-body-bold-16", label: "Body / Bold 16" },
-  { cls: "text-button-text-semibold-18", label: "Button / SemiBold 18" },
-  { cls: "text-button-text-semibold-16", label: "Button / SemiBold 16" },
-  { cls: "text-button-text-semibold-12", label: "Button / SemiBold 12" },
+  { cls: "text-button-text-medium-16", label: "Button / Medium 16" },
+  { cls: "text-button-text-medium-14", label: "Button / Medium 14" },
+  { cls: "text-button-text-medium-12", label: "Button / Medium 12" },
   { cls: "text-deco-eyebrow-upercase", label: "Deco / Eyebrow Uppercase" },
 ];
 

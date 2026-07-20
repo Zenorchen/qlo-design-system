@@ -68,7 +68,7 @@ export function UploadDropzone({
           aria-hidden
         />
         <span className="qlo-dropzone__title text-body-bold-16">{title}</span>
-        <span className="qlo-dropzone__subtitle text-subtitle-regular-17">{subtitle}</span>
+        <span className="qlo-dropzone__subtitle text-subtitle-regular-16">{subtitle}</span>
       </button>
       <input
         ref={inputRef}
