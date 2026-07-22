@@ -51,10 +51,28 @@
   --radius-medium: 12px;
   --radius-big: 16px;
 
-  /* ---- Padding ---- */
-  --padding-extra-small: 4px;
-  --padding-medium: 8px;
-  --padding-regular: 16px;
+  /* ---- Spacing（4pt 基準格線）----
+     命名採純數值，避免 extra-small/medium/regular 的大小順序混淆。
+     2 是唯一的格線例外，僅供「緊鄰成組」的元素（如 Delete/File）。 */
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+
+  /* ---- Control height ----
+     Button / IconButton / 未來的 Input·Select 共用，確保並排等高。
+     ⚠️ Desktop-first：低於 Apple 44 / Material 48 的觸控建議。 */
+  --size-control-sm: 28px;
+  --size-control-md: 32px;
+  --size-control-lg: 40px;
+
+  /* ---- Border width ---- */
+  --border-width-hairline: 0.5px; /* 僅分隔線／卡片外框，勿用於互動元件 */
+  --border-width-default: 1px;
 }
 
 /* ---- Typography (Poppins 400/600, Space Mono 700) ---- */

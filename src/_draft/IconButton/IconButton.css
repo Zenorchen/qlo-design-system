@@ -3,16 +3,20 @@
  * 行為（全部標「推斷／待設計確認」，見 FIGMA-SYNC）：
  *   default → icon 為 dark / grey；:hover → icon 轉 primary（橘）；
  *   :focus-visible → 橘色外框；:active → 較深橘；:disabled → 灰、not-allowed。
- * 底色一律透明（使用者選「純變色」）；tap target ≥ 44px（a11y，憲法 6.5）。 */
+ * 底色一律透明（使用者選「純變色」）；尺寸與 Button 共用 control height（desktop-first）。 */
 
 .qlo-icon-btn {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 44px;   /* 2.75rem，最小可點擊面積（結構性，非設計語彙） */
-  min-height: 44px;
-  padding: var(--padding-medium); /* 8px */
+  /* 與 Button 共用 control height，並排時等高（原 44 為觸控尺寸，desktop-first 下改為對齊）。
+     ⚠️ 若日後支援平板，需另開 density 把可點擊面積放回 44。 */
+  min-width: var(--size-control-md);
+  min-height: var(--size-control-md);
+  /* padding 收到 4：icon 24 + 4×2 = 32，實際高度才會等於 control-md
+     （原本 8 會讓內容撐到 40，min-height 是下限、擋不住）。 */
+  padding: var(--spacing-4);
   border: none;
   border-radius: var(--radius-medium); /* 12px，沿用 Button 圓角；待確認 */
   background: transparent;

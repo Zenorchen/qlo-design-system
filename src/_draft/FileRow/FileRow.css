@@ -9,12 +9,12 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: var(--padding-regular); /* 16px */
+  gap: var(--spacing-16); /* 16px */
   min-height: 80px; /* Figma 固定 80；用 min-height 讓放大字體時能撐開（結構性） */
   /* Figma 標 py-24，但被固定高 80 覆蓋 → 這裡用 min-height 80 + 少量垂直內距，
      內容置中；放大字體時才有 8px 呼吸空間（憲法 6.3 / 6.5）。 */
-  padding: var(--padding-medium) var(--padding-regular); /* 8px 16px */
-  border: 1px solid var(--qlo-file-row-border);
+  padding: var(--spacing-8) var(--spacing-16); /* 8px 16px */
+  border: var(--border-width-default) solid var(--qlo-file-row-border);
   border-radius: var(--radius-medium); /* 12px */
   background: var(--primitive-grey-0);
   overflow: hidden;
@@ -43,7 +43,7 @@
   min-width: 0; /* 允許子項截斷 */
   display: flex;
   align-items: baseline;
-  gap: var(--padding-regular); /* 16px */
+  gap: var(--spacing-16); /* 16px */
   overflow: hidden;
 }
 
@@ -72,5 +72,5 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: var(--padding-regular); /* 16px */
+  gap: var(--spacing-16); /* 16px */
 }

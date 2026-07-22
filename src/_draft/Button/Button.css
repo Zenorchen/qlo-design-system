@@ -8,7 +8,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1.2px solid transparent; /* 保留邊框空間，stroke 才不會位移 */
+  border: var(--border-width-default) solid transparent; /* 保留邊框空間，stroke 才不會位移 */
   border-radius: var(--radius-small); /* 8px（依使用者調整，原 medium 12px） */
   cursor: pointer;
   white-space: nowrap;
@@ -19,10 +19,11 @@
 .qlo-btn__icon { display: inline-flex; align-items: center; flex-shrink: 0; }
 
 /* ---- Size ----
- * min-height 貼齊自然高（padding×2+字高），只當保底：icon-only 或字體渲染略矮時高度不縮水。 */
-.qlo-btn--big { min-height: 38px; padding: 10px 12px; gap: var(--padding-medium); }        /* gap 8 */
-.qlo-btn--medium { min-height: 32px; padding: 8px 12px; gap: var(--padding-medium); }      /* gap 8 */
-.qlo-btn--small { min-height: 28px; min-width: 68px; padding: 8px 12px; gap: var(--padding-extra-small); } /* gap 4 */
+ * 高度改用共用的 control height 尺度（Button / IconButton / 未來 Input 對齊）。
+ * 內距全部落在 4pt 格線上。 */
+.qlo-btn--big { min-height: var(--size-control-lg); padding: var(--spacing-8) var(--spacing-12); gap: var(--spacing-8); }
+.qlo-btn--medium { min-height: var(--size-control-md); padding: var(--spacing-8) var(--spacing-12); gap: var(--spacing-8); }
+.qlo-btn--small { min-height: var(--size-control-sm); min-width: 68px; padding: var(--spacing-8) var(--spacing-12); gap: var(--spacing-4); }
 
 /* =====================================================================
  * filled
@@ -36,7 +37,7 @@
 .qlo-btn--grey.qlo-btn--filled:hover:not(:disabled) { background: var(--primitive-grey-800); }
 
 /* =====================================================================
- * stroke（邊框 1.2px、無底）
+ * stroke（邊框 border-width-default、無底）
  * ===================================================================== */
 .qlo-btn--stroke { background: transparent; }
 .qlo-btn--red.qlo-btn--stroke { border-color: var(--semantic-brand-primary); color: var(--semantic-text-qlo-primary); }
@@ -67,7 +68,7 @@
   min-width: 0;
   padding-left: 0;
   padding-right: 0;
-  gap: var(--padding-extra-small); /* 4px：icon 與字緊貼 */
+  gap: var(--spacing-4); /* 4px：icon 與字緊貼 */
 }
 .qlo-btn--red.qlo-btn--link { color: var(--semantic-text-qlo-primary); }
 .qlo-btn--black.qlo-btn--link { color: var(--semantic-text-dark); }

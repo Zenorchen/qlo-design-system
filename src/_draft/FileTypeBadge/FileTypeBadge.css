@@ -6,7 +6,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-extra-small); /* 4px */
+  padding: var(--spacing-4); /* 4px */
   background: var(--primitive-grey-200);
   color: var(--semantic-text-grey01);
   border-radius: var(--radius-small); /* 8px */

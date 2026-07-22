@@ -3,7 +3,7 @@
  * 非 token 版面值（gap 48、padding 32、固定寬高、卡片高）為結構性，集中在此、記 FIGMA-SYNC。 */
 
 .attachment-page {
-  --attachment-page-pad-x: 32px; /* 左右內距（結構性，非 token） */
+  --attachment-page-pad-x: var(--spacing-32); /* 左右內距 */
   --attachment-page-w: 1040px; /* 固定頁寬（結構性） */
   --attachment-page-h: 90vh; /* 頁面高定調在視窗 90%（依需求） */
 
@@ -15,8 +15,8 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--padding-regular); /* Title / 卡片 / footer 間距 16px */
-  padding: var(--padding-regular) var(--attachment-page-pad-x); /* 上下 16、左右 32 */
+  gap: var(--spacing-16); /* Title / 卡片 / footer 間距 16px */
+  padding: var(--spacing-16) var(--attachment-page-pad-x); /* 上下 16、左右 32 */
   background: var(--primitive-grey-0);
   overflow: hidden; /* 固定框，不外溢 */
 }
@@ -34,7 +34,7 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--padding-regular); /* 16px */
+  gap: var(--spacing-16); /* 16px */
   overflow-y: auto;
 }
 
@@ -54,14 +54,14 @@
 .attachment-page__header-actions {
   display: flex;
   align-items: center;
-  gap: var(--padding-medium); /* 8px */
+  gap: var(--spacing-8); /* 8px */
 }
 
-/* Delete / File 一組：inline-grid + grid-auto-columns:1fr → 兩顆等寬（自動對齊較寬者），
- * 間距 2px（非 token，屬結構性微調）。grid item 預設 stretch，按鈕自動填滿等寬格。 */
+/* Delete / File 一組：inline-grid + grid-auto-columns:1fr → 兩顆等寬（自動對齊較寬者）。
+ * spacing-2 是格線例外，專供這種「緊鄰成組」的元素。 */
 .attachment-page__edit-actions {
   display: inline-grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  gap: 2px;
+  gap: var(--spacing-2);
 }
